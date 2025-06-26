@@ -11,11 +11,21 @@ window.onload = (event) => {
     }
 };
 
+
   function discar(){
       document.getElementById('check').value = '1';
   }
-  function salvar(){
-    document.getElementById('check').value = '0';
+
+  function salvar(event){
+    event.preventDefault();
+
+    const form = document.getElementById('formulario');
+
+    if (form.reportValidity()) {
+      document.getElementById('check').value = '0';
+      console.log('Formulário salvo com sucesso!');
+    }
+
   
   }
 
